@@ -8,9 +8,17 @@
     No dependencies. No lock-in. Just markdown and a shell script.
   </p>
   <p align="center">
-    <a href="#-what-you-get">What You Get</a> · <a href="#-install">Install</a> · <a href="#-philosophy">Philosophy</a>
+    <a href="#-what-you-get">What You Get</a> · <a href="#-philosophy">Philosophy</a> · <a href="#-who-this-is-for">Who It's For</a>
   </p>
 </p>
+
+### Quick Start
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tylerthebuildor/vibestack/main/install.sh | bash
+```
+
+> Run from the root of your project. Existing files are never overwritten.
 
 ---
 
@@ -69,12 +77,6 @@ Write a convention once, and your AI follows it forever. No more repeating yours
 ### 🛠️ extras/ — Dev Tools Installer (Optional)
 
 Most platforms ship CLI tools these days, and installing them is one of the highest-leverage things you can do for AI-assisted development. An `aws` or `vercel` CLI gives your agent direct access to manage infrastructure, deployments, and services — no web dashboard required. The optional installer script gets them all set up in one pass.
-
-## 🚀 Install
-
-```bash
-# Coming soon — for now, copy the template files into your project
-```
 
 ## 🧭 Philosophy
 
