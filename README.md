@@ -29,28 +29,23 @@ Five files:
 <table>
   <tr>
     <td><code>CLAUDE.md</code></td>
-    <td>&nbsp;&nbsp;&nbsp;</td>
-    <td>Quick-start reference card — tells any contributor (human or AI) what this project is, how it's built, how to work in it</td>
+    <td style="padding: 8px 16px;">Quick-start reference card — tells any contributor (human or AI) what this project is, how it's built, how to work in it</td>
   </tr>
   <tr>
     <td><code>TODO.md</code></td>
-    <td></td>
-    <td>Lightweight task tracker with a protocol for parallel work so agents don't collide</td>
+    <td style="padding: 8px 16px;">Lightweight task tracker with a protocol for parallel work so agents don't collide</td>
   </tr>
   <tr>
     <td><code>ops.sh</code></td>
-    <td></td>
-    <td>Single entry point for build, test, run, deploy — <code>./ops.sh build</code>, <code>./ops.sh test</code>, <code>./ops.sh deploy prod</code></td>
+    <td style="padding: 8px 16px;">Single entry point for build, test, run, deploy — <code>./ops.sh build</code>, <code>./ops.sh test</code>, <code>./ops.sh deploy prod</code></td>
   </tr>
   <tr>
     <td><code>docs/</code></td>
-    <td></td>
-    <td>Living knowledge base — the docs you write today prevent your AI from re-discovering the same lessons tomorrow</td>
+    <td style="padding: 8px 16px;">Living knowledge base — the docs you write today prevent your AI from re-discovering the same lessons tomorrow</td>
   </tr>
   <tr>
     <td><code>.claude/skills/</code></td>
-    <td></td>
-    <td>Teach AI your project's conventions and workflows via reusable skills</td>
+    <td style="padding: 8px 16px;">Teach AI your project's conventions and workflows via reusable skills</td>
   </tr>
 </table>
 
@@ -59,25 +54,23 @@ Five files:
 <table>
   <tr>
     <td><code>/vibestack</code></td>
-    <td>&nbsp;&nbsp;&nbsp;</td>
-    <td>Analyzes your project and fills out CLAUDE.md, ops.sh, docs, and TODO.md with project-specific content</td>
+    <td style="padding: 8px 16px;">Analyzes your project and fills out CLAUDE.md, ops.sh, docs, and TODO.md with project-specific content</td>
   </tr>
   <tr>
     <td><code>/squad</code></td>
-    <td></td>
-    <td>Generates domain-specific rules and specialist subagents so Claude auto-loads the right context per file</td>
+    <td style="padding: 8px 16px;">Generates domain-specific rules and specialist subagents so Claude auto-loads the right context per file</td>
   </tr>
   <tr>
     <td><code>/todo</code></td>
-    <td></td>
-    <td>Works through TODO.md tasks sequentially. <code>/todo populate</code> seeds the next batch ranked by impact</td>
+    <td style="padding: 8px 16px;">Works through TODO.md tasks sequentially. <code>/todo populate</code> seeds the next batch ranked by impact</td>
   </tr>
   <tr>
     <td><code>/docs</code></td>
-    <td></td>
-    <td>Captures conversation learnings into your docs folder and cleans up stale content</td>
+    <td style="padding: 8px 16px;">Captures conversation learnings into your docs folder and cleans up stale content</td>
   </tr>
 </table>
+
+<br />
 
 Also includes `cli-first` — a reference skill that teaches your AI to use platform CLIs and check `.env*` files instead of making raw API calls.
 
