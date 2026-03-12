@@ -131,27 +131,7 @@ const html = `<!DOCTYPE html>
   <div class="container">
     ${content}
   </div>
-  <script>
-    document.querySelectorAll('pre').forEach(pre => {
-      const code = pre.querySelector('code');
-      if (!code) return;
-      const text = code.textContent.trim();
-      // Skip non-command blocks (ascii art, yaml configs, directory trees)
-      if (!text.includes('\n') || /^(curl|npm|pip|cargo|go |bash|powershell|claw|\.\/|Invoke-|Set-)/m.test(text)) {
-        const btn = document.createElement('button');
-        btn.className = 'copy-btn';
-        btn.textContent = 'Copy';
-        btn.addEventListener('click', () => {
-          navigator.clipboard.writeText(text).then(() => {
-            btn.textContent = 'Copied!';
-            btn.classList.add('copied');
-            setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-          });
-        });
-        pre.appendChild(btn);
-      }
-    });
-  </script>
+  <script src="/copy-buttons.js"></script>
 </body>
 </html>`;
 
