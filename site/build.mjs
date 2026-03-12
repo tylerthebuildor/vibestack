@@ -16,64 +16,95 @@ const html = `<!DOCTYPE html>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #c9d1d9;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #e6edf3;
       background: #0d1117;
+      word-wrap: break-word;
     }
     .container {
       max-width: 860px;
       margin: 0 auto;
       padding: 3rem 2rem 4rem;
     }
-    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #f0f6fc; }
-    h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #f0f6fc; padding-bottom: 0.3rem; border-bottom: 1px solid #21262d; }
-    h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem; color: #f0f6fc; }
-    p { margin-bottom: 1rem; }
+    /* Headings */
+    h1 { font-size: 2em; margin-top: 0; margin-bottom: 16px; color: #f0f6fc; font-weight: 600; line-height: 1.25; }
+    h2 { font-size: 1.5em; margin-top: 24px; margin-bottom: 16px; color: #f0f6fc; font-weight: 600; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 2px solid #30363d; }
+    h3 { font-size: 1.25em; margin-top: 24px; margin-bottom: 16px; color: #f0f6fc; font-weight: 600; line-height: 1.25; }
+    /* Text */
+    p { margin-top: 0; margin-bottom: 16px; }
     a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    strong { color: #f0f6fc; }
+    strong { font-weight: 600; }
+    /* Code */
     code {
-      font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace;
-      background: #161b22;
+      font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+      background: rgba(110,118,129,0.4);
       padding: 0.2em 0.4em;
       border-radius: 6px;
-      font-size: 0.875em;
+      font-size: 85%;
     }
     pre {
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 6px;
-      padding: 1rem;
+      padding: 16px;
       overflow-x: auto;
-      margin-bottom: 1rem;
+      margin-bottom: 16px;
+      line-height: 1.45;
     }
     pre code {
       background: none;
       padding: 0;
-      font-size: 0.875rem;
-      line-height: 1.5;
+      font-size: 85%;
+      line-height: inherit;
+      border-radius: 0;
     }
+    /* Blockquote */
     blockquote {
-      border-left: 3px solid #3b82f6;
-      padding: 0.5rem 1rem;
-      margin-bottom: 1rem;
+      border-left: 0.25em solid #30363d;
+      padding: 0 1em;
+      margin: 0 0 16px 0;
       color: #8b949e;
-      background: #161b22;
-      border-radius: 0 6px 6px 0;
     }
+    /* Dividers */
     hr {
       border: none;
-      border-top: 1px solid #21262d;
-      margin: 2rem 0;
+      border-top: 3px solid #30363d;
+      margin: 24px 0;
+      overflow: hidden;
     }
-    ul, ol { padding-left: 2rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.25rem; }
-    li > p { margin-bottom: 0.25rem; }
-    ul ul, ol ul { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    /* Lists */
+    ul, ol { padding-left: 2em; margin-top: 0; margin-bottom: 16px; }
+    li { margin-top: 0.25em; }
+    li + li { margin-top: 0.25em; }
+    li > p { margin-top: 16px; }
+    ul ul, ol ul, ul ol, ol ol { margin-top: 0; margin-bottom: 0; }
+    /* Tables */
+    table {
+      width: 100%;
+      border-spacing: 0;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      border: 1px solid #30363d;
+      overflow: hidden;
+    }
+    td, th {
+      border: 1px solid #30363d;
+      padding: 6px 13px;
+      text-align: left;
+    }
+    th { font-weight: 600; background: #161b22; }
+    tr { background: #0d1117; border-top: 1px solid #21262d; }
+    tr:nth-child(2n) { background: #161b22; }
+    /* Images */
     img { max-width: 100%; }
+    /* Center-aligned blocks (header) */
+    [align="center"] { text-align: center; }
+    /* Mobile */
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1rem; }
-      h1 { font-size: 2rem; }
+      h1 { font-size: 1.75em; }
     }
   </style>
 </head>
