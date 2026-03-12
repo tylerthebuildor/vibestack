@@ -46,7 +46,11 @@ Five files. That's it.
 
 **ops.sh** — One script for every project operation. Both humans and AI run `./ops.sh build`, `./ops.sh test`, `./ops.sh deploy prod`. Fill in your commands once and every contributor knows how to operate the project.
 
-**.claude/skills/** — Reference skills auto-load as background knowledge (error handling patterns, API conventions). Task skills are repeatable workflows triggered via slash commands (`/deploy-staging`, `/audit-module src/auth`). Write a convention once, your AI follows it forever. Ships with a `cli-first` skill that teaches your AI to use platform CLIs and check `.env*` files instead of making raw API calls. The `/squad` skill analyzes your project and generates domain-specific rules and specialist subagents — so Claude automatically loads the right context for each part of your codebase. The `/todo` skill works through TODO.md tasks sequentially, and `/todo populate` re-analyzes the codebase to seed the next batch of highest-impact tasks ranked by production readiness.
+**.claude/skills/** — Write a convention once, your AI follows it forever. Reference skills auto-load as background knowledge. Task skills are repeatable workflows triggered via slash commands (`/deploy-staging`, `/audit-module src/auth`).
+
+- **`cli-first`** — Teaches your AI to use platform CLIs and check `.env*` files instead of making raw API calls.
+- **`/squad`** — Analyzes your project and generates domain-specific rules and specialist subagents — so Claude automatically loads the right context for each part of your codebase.
+- **`/todo`** — Works through TODO.md tasks sequentially. `/todo populate` re-analyzes the codebase to seed the next batch of highest-impact tasks ranked by production readiness.
 
 ## 🔥 The Opinions
 

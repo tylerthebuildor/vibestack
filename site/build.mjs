@@ -68,6 +68,8 @@ const html = `<!DOCTYPE html>
     }
     ul, ol { padding-left: 2rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.25rem; }
+    li > p { margin-bottom: 0.25rem; }
+    ul ul, ol ul { margin-top: 0.5rem; margin-bottom: 0.5rem; }
     img { max-width: 100%; }
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1rem; }
