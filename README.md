@@ -52,8 +52,10 @@ Five files. That's it.
 **.claude/skills/** — Write a convention once, your AI follows it forever. Reference skills auto-load as background knowledge. Task skills are repeatable workflows triggered via slash commands (`/deploy-staging`, `/audit-module src/auth`).
 
 - **`cli-first`** — Teaches your AI to use platform CLIs and check `.env*` files instead of making raw API calls.
+- **`/vibestack`** — Analyzes your project and fills out CLAUDE.md, ops.sh, docs, and TODO.md with project-specific content. Run it right after install.
 - **`/squad`** — Analyzes your project and generates domain-specific rules and specialist subagents — so Claude automatically loads the right context for each part of your codebase.
 - **`/todo`** — Works through TODO.md tasks sequentially. `/todo populate` re-analyzes the codebase to seed the next batch of highest-impact tasks ranked by production readiness.
+- **`/docs`** — Captures conversation learnings into your docs folder and cleans up stale content.
 
 ## 🔥 The Opinions
 
