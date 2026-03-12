@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { marked } from 'marked';
 
-const readme = readFileSync('README.md', 'utf-8');
+const readme = readFileSync('../README.md', 'utf-8');
 const content = marked.parse(readme);
 
 const html = `<!DOCTYPE html>
