@@ -58,20 +58,19 @@ const html = `<!DOCTYPE html>
       position: absolute;
       top: 8px;
       right: 8px;
-      background: #21262d;
+      background: #161b22;
       border: 1px solid #30363d;
       border-radius: 6px;
       color: #8b949e;
       cursor: pointer;
-      padding: 4px 8px;
-      font-size: 12px;
-      line-height: 1;
-      opacity: 0.4;
-      transition: opacity 0.15s ease;
+      padding: 4px;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    pre:hover .copy-btn { opacity: 1; }
     .copy-btn:hover { background: #30363d; color: #e6edf3; }
-    .copy-btn.copied { color: #3fb950; }
+    .copy-btn.copied { color: #3fb950; border-color: #3fb950; }
     pre code {
       background: none;
       padding: 0;
