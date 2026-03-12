@@ -45,6 +45,7 @@ const html = `<!DOCTYPE html>
       font-size: 85%;
     }
     pre {
+      position: relative;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 6px;
@@ -53,6 +54,24 @@ const html = `<!DOCTYPE html>
       margin-bottom: 16px;
       line-height: 1.45;
     }
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #8b949e;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 12px;
+      line-height: 1;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+    pre:hover .copy-btn { opacity: 1; }
+    .copy-btn:hover { background: #30363d; color: #e6edf3; }
+    .copy-btn.copied { color: #3fb950; }
     pre code {
       background: none;
       padding: 0;
@@ -112,6 +131,27 @@ const html = `<!DOCTYPE html>
   <div class="container">
     ${content}
   </div>
+  <script>
+    document.querySelectorAll('pre').forEach(pre => {
+      const code = pre.querySelector('code');
+      if (!code) return;
+      const text = code.textContent.trim();
+      // Skip non-command blocks (ascii art, yaml configs, directory trees)
+      if (!text.includes('\n') || /^(curl|npm|pip|cargo|go |bash|powershell|claw|\.\/|Invoke-|Set-)/m.test(text)) {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'Copy';
+        btn.addEventListener('click', () => {
+          navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+          });
+        });
+        pre.appendChild(btn);
+      }
+    });
+  </script>
 </body>
 </html>`;
 
