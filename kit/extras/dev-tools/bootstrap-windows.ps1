@@ -109,7 +109,22 @@ if ($hasUbuntu) {
     Write-Host "  OK — Ubuntu is already installed." -ForegroundColor Green
 } else {
     Write-Host "  Installing Ubuntu..." -ForegroundColor Yellow
-    wsl --install -d Ubuntu
+    $ubuntuOutput = wsl --install -d Ubuntu 2>&1 | Out-String
+    Write-Host $ubuntuOutput
+
+    if ($ubuntuOutput -match "reboot|restart") {
+        Write-Host ""
+        Write-Host "  A restart is needed before Ubuntu is available." -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  After restarting:" -ForegroundColor Yellow
+        Write-Host "    1. Ubuntu may open automatically to create a username/password — complete that first" -ForegroundColor Yellow
+        Write-Host "    2. Open PowerShell as Administrator" -ForegroundColor Yellow
+        Write-Host "    3. Re-run this script to finish setup" -ForegroundColor Yellow
+        Write-Host ""
+        Read-Host "Press Enter to exit (then restart your computer)"
+        Exit 0
+    }
+
     if ($LASTEXITCODE -ne 0) {
         Write-Host "  Ubuntu install failed. Try manually: wsl --install -d Ubuntu" -ForegroundColor Red
         Read-Host "Press Enter to exit"
