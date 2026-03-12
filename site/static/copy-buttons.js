@@ -19,6 +19,10 @@ document.querySelectorAll('pre').forEach(function(pre) {
         setTimeout(function() { btn.innerHTML = copyIcon; btn.classList.remove('copied'); }, 2000);
       });
     });
-    pre.appendChild(btn);
+    var wrapper = document.createElement('div');
+    wrapper.className = 'pre-wrapper';
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+    wrapper.appendChild(btn);
   }
 });

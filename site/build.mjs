@@ -44,14 +44,17 @@ const html = `<!DOCTYPE html>
       border-radius: 6px;
       font-size: 85%;
     }
-    pre {
+    .pre-wrapper {
       position: relative;
+      margin-bottom: 16px;
+    }
+    pre {
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 6px;
       padding: 16px;
       overflow-x: auto;
-      margin-bottom: 16px;
+      margin-bottom: 0;
       line-height: 1.45;
     }
     .copy-btn {
@@ -59,6 +62,7 @@ const html = `<!DOCTYPE html>
       top: 50%;
       transform: translateY(-50%);
       right: 6px;
+      z-index: 1;
       background: #21262d;
       border: 1px solid #30363d;
       border-radius: 6px;
