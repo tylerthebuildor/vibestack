@@ -108,9 +108,14 @@ if ($NeedsReboot) {
 if ($hasUbuntu) {
     Write-Host "  OK — Ubuntu is already installed." -ForegroundColor Green
 } else {
-    Write-Host "  Installing Ubuntu..." -ForegroundColor Yellow
-    $ubuntuOutput = wsl --install -d Ubuntu 2>&1 | Out-String
-    Write-Host $ubuntuOutput
+    Write-Host "  Installing Ubuntu (this may take a few minutes)..." -ForegroundColor Yellow
+    Write-Host ""
+
+    # Stream output in real time while also capturing it for error checks
+    $ubuntuLog = "$env:TEMP\vibestack-wsl-install.log"
+    wsl --install -d Ubuntu 2>&1 | Tee-Object -FilePath $ubuntuLog
+    $ubuntuExitCode = $LASTEXITCODE
+    $ubuntuOutput = Get-Content $ubuntuLog -Raw -ErrorAction SilentlyContinue
 
     if ($ubuntuOutput -match "reboot|restart") {
         Write-Host ""
@@ -126,6 +131,7 @@ if ($hasUbuntu) {
     }
 
     if ($ubuntuOutput -match "HYPERV_NOT_INSTALLED|Virtual Machine Platform|virtualization") {
+        Write-Host ""
         Write-Host "  Virtualization is not enabled on this machine." -ForegroundColor Red
         Write-Host ""
         Write-Host "  WSL 2 requires hardware virtualization. To fix:" -ForegroundColor Yellow
@@ -140,7 +146,7 @@ if ($hasUbuntu) {
         Exit 1
     }
 
-    if ($LASTEXITCODE -ne 0) {
+    if ($ubuntuExitCode -ne 0) {
         Write-Host "  Ubuntu install failed. Try manually: wsl --install -d Ubuntu" -ForegroundColor Red
         Read-Host "Press Enter to exit"
         Exit 1
