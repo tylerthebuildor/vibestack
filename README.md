@@ -3,9 +3,7 @@
   <p align="center">
     <strong>Give your AI agents the context to build, not just guess.</strong>
     <br />
-    Opinionated files, skills, and tooling that keep AI agents effective as your codebase grows.
-    <br />
-    No dependencies. No lock-in. Just markdown and a shell script.
+    Opinionated project structure, skills, and tooling for AI-assisted development.
   </p>
   <p align="center">
     <a href="https://github.com/tylerthebuildor/vibestack">GitHub</a> · <a href="https://vibestack.md">Website</a>
