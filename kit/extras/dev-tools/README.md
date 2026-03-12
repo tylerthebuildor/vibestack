@@ -24,9 +24,7 @@ Or if you haven't cloned the repo:
 
 ```powershell
 # Download and run
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tylerthebuildor/vibestack/main/kit/extras/dev-tools/bootstrap-windows.ps1" -OutFile "$env:TEMP\bootstrap-windows.ps1"
-(Get-Content "$env:TEMP\bootstrap-windows.ps1" -Raw) | Set-Content "$env:TEMP\bootstrap-windows.ps1"
-powershell -ExecutionPolicy Bypass -File "$env:TEMP\bootstrap-windows.ps1"
+Invoke-RestMethod "https://raw.githubusercontent.com/tylerthebuildor/vibestack/main/kit/extras/dev-tools/bootstrap-windows.ps1" | Set-Content "$env:TEMP\bootstrap-windows.ps1"; powershell -ExecutionPolicy Bypass -File "$env:TEMP\bootstrap-windows.ps1"
 ```
 
 Safe to re-run — already-installed tools and active logins are automatically skipped.
