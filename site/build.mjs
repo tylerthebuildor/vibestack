@@ -66,7 +66,7 @@ const html = `<!DOCTYPE html>
       padding: 4px 8px;
       font-size: 12px;
       line-height: 1;
-      opacity: 0;
+      opacity: 0.4;
       transition: opacity 0.15s ease;
     }
     pre:hover .copy-btn { opacity: 1; }
