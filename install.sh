@@ -15,7 +15,7 @@ YELLOW="\033[1;33m"
 DIM="\033[2m"
 RESET="\033[0m"
 
-echo -e "${CYAN}🧱 VibeStack Installer${RESET}"
+echo -e "${CYAN}▓▒░ VibeStack Installer${RESET}"
 echo ""
 
 # Project-specific files — never overwrite, these contain user content
