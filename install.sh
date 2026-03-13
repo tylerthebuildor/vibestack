@@ -38,6 +38,7 @@ MANAGED_FILES=(
   ".claude/skills/docs/SKILL.md"
   ".claude/skills/squad/SKILL.md"
   ".claude/skills/todo/SKILL.md"
+  ".claude/skills/bosskey/SKILL.md"
   ".claude/hooks/notify-done.sh"
   ".claude/hooks/statusline.sh"
 )

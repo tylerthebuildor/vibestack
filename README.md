@@ -83,6 +83,10 @@ Five files:
     <td><code>/docs</code></td>
     <td style="padding: 8px 16px;">Captures conversation learnings into your docs folder and cleans up stale content</td>
   </tr>
+  <tr>
+    <td><code>/bosskey</code></td>
+    <td style="padding: 8px 16px;">Scans your recent git history and generates a polished standup script you can recite to your boss — vague enough to avoid follow-ups, impressive enough to sound productive</td>
+  </tr>
 </table>
 
 <br />
