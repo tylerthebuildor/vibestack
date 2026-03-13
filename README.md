@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center"><img src="site/static/favicon.svg" width="36" height="36" alt="VibeStack logo" style="vertical-align: middle;"> VibeStack</h1>
   <p align="center">
-    <strong>Give your AI agents the context to build, not just guess.</strong>
+    <strong>Give your AI agents the context to build not guess.</strong>
     <br />
     Opinionated project structure, skills, and tooling for AI-assisted development.
   </p>
@@ -12,20 +12,6 @@
 
 ## Install
 
-### Option A: Claude Code Plugin
-
-Install VibeStack as a plugin to get skills, hooks, and workflows across all your projects:
-
-```
-/plugin install vibestackmd/vibestack
-```
-
-Then run `/vibestack` inside any project to scaffold the project-level files (CLAUDE.md, ops.sh, docs, TODO.md).
-
-### Option B: One-Line Installer
-
-Adds the full VibeStack kit — plugin content plus project templates — directly into your current project:
-
 ```bash
 curl -fsSL https://raw.githubusercontent.com/vibestackmd/vibestack/main/install.sh | bash
 ```
@@ -33,6 +19,21 @@ curl -fsSL https://raw.githubusercontent.com/vibestackmd/vibestack/main/install.
 Run from the root of your project. Existing files are never overwritten.
 
 Then run `/vibestack` inside Claude Code to auto-fill everything for your project.
+
+<details>
+<summary>Or install as a Claude Code plugin</summary>
+
+<br />
+
+If you just want the skills and hooks without project templates:
+
+```
+/plugin install vibestackmd/vibestack
+```
+
+Then run `/vibestack` inside any project to scaffold CLAUDE.md, ops.sh, docs, and TODO.md.
+
+</details>
 
 ---
 
@@ -87,6 +88,7 @@ Five files:
 <br />
 
 Also includes reference skills that auto-load as context:
+
 - `cli-first` — teaches your AI to use platform CLIs and check `.env*` files instead of making raw API calls
 - `lsp` — teaches your AI to use language servers for type checking, go-to-definition, find-references, and post-change validation
 

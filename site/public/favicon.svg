@@ -17,12 +17,10 @@
       <stop offset="100%" stop-color="#6C5CE7"/>
     </linearGradient>
   </defs>
-  <!-- Stack layers -->
   <rect x="6" y="46" width="52" height="11" rx="3.5" fill="url(#g1)"/>
   <rect x="10" y="32" width="44" height="11" rx="3.5" fill="url(#g2)"/>
   <rect x="14" y="18" width="36" height="11" rx="3.5" fill="url(#g3)"/>
   <rect x="18" y="4" width="28" height="11" rx="3.5" fill="url(#g4)"/>
-  <!-- Sparkles -->
   <circle cx="53" cy="8" r="2.5" fill="#FF9FF3"/>
   <circle cx="58" cy="3" r="1.5" fill="#FECA57"/>
 </svg>

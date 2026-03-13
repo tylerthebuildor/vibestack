@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+.markdown-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+  background: #0d1117;
+}
+
+/* Inline logo SVG sizing */
+.markdown-body h1 svg {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.15em;
+  display: inline-block;
+  margin-right: 0.15em;
+}
+
+/* Copy button on code blocks */
+.pre-wrapper {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6px;
+  z-index: 1;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #8b949e;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn:hover {
+  background: #30363d;
+  color: #e6edf3;
+}
+
+.copy-btn.copied {
+  color: #3fb950;
+  border-color: #3fb950;
+}
+
+@media (max-width: 600px) {
+  .markdown-body {
+    padding: 1.5rem 1rem;
+  }
+}
