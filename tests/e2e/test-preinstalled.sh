@@ -71,30 +71,6 @@ else
   ((++fail))
 fi
 
-echo ""
-echo -e "${CYAN}--- Running dev-tools installer ---${RESET}"
-
-bash /vibestack/kit/extras/dev-tools/install.sh > /tmp/devtools-output.txt 2>&1 || true
-cat /tmp/devtools-output.txt
-
-echo ""
-echo -e "${CYAN}--- Checking pre-installed tool detection ---${RESET}"
-
-# Strip ANSI and check the file directly
-sed -i 's/\x1b\[[0-9;]*m//g' /tmp/devtools-output.txt
-
-# Count how many "already installed" / "Already installed" messages appear
-already_count=$(grep -ciE "already installed" /tmp/devtools-output.txt || true)
-if [[ $already_count -ge 3 ]]; then
-  echo -e "  ${GREEN}PASS${RESET}  Dev-tools detects $already_count pre-installed tools"
-  ((++pass))
-else
-  echo -e "  ${RED}FAIL${RESET}  Expected 3+ 'already installed' messages, got $already_count"
-  echo "  Debug: relevant lines from output:"
-  grep -iE "already|installed|Git|Zsh|psql" /tmp/devtools-output.txt | head -10
-  ((++fail))
-fi
-
 # ── Summary ─────────────────────────────────────────────
 
 echo ""

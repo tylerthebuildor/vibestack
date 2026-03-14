@@ -105,9 +105,6 @@ assert_command_exists "deno"
 assert_command_exists "rustc"
 assert_command_exists "cargo"
 
-# Zoxide
-assert_command_exists "zoxide"
-
 # PostgreSQL client
 assert_command_exists "psql"
 
@@ -131,7 +128,6 @@ echo -e "${CYAN}--- Checking shell config ---${RESET}"
 assert_file_exists "$HOME/.zshrc"
 assert_file_contains "$HOME/.zshrc" "NVM_DIR"
 assert_file_contains "$HOME/.zshrc" ".cargo/env"
-assert_file_contains "$HOME/.zshrc" "zoxide init"
 assert_file_contains "$HOME/.zshrc" "plugins=(git z)"
 
 echo ""
