@@ -72,9 +72,7 @@ suite_results=()
 cleanup() {
   echo ""
   echo -e "${CYAN}Cleaning up Docker images...${RESET}"
-  docker images --filter "reference=${IMAGE_PREFIX}-*" -q 2>/dev/null | xargs -r docker rmi -f 2>/dev/null || true
-  # Also clean any dangling images from failed builds
-  docker image prune -f 2>/dev/null || true
+  docker images --filter "reference=${IMAGE_PREFIX}-*" -q 2>/dev/null | xargs docker rmi -f 2>/dev/null || true
   echo -e "${GREEN}Clean.${RESET}"
 }
 trap cleanup EXIT
@@ -132,11 +130,11 @@ for suite in "${SUITES[@]}"; do
 done
 
 # Deduplicate and build
-declare -A built
+built=""
 for img in "${images_needed[@]}"; do
-  if [[ -z "${built[$img]:-}" ]]; then
+  if [[ ! " $built " =~ " $img " ]]; then
     build_image "$img" "$SCRIPT_DIR/Dockerfile.$img"
-    built[$img]=1
+    built="$built $img"
   fi
 done
 

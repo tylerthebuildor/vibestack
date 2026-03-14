@@ -38,6 +38,9 @@ define do-release
 	@echo "  $(VERSION) → $(1)"
 	@echo ""
 	@read -p "  Release v$(1)? [y/N] " confirm && [ "$$confirm" = "y" ] || exit 1
+	@echo "  Running E2E tests before release..."
+	@chmod +x tests/e2e/run.sh && ./tests/e2e/run.sh preinstalled
+	@echo ""
 	@echo "$(1)" > VERSION
 	@git add VERSION
 	@git commit -m "release v$(1)"
